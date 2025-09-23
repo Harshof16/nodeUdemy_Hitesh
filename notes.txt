@@ -1,0 +1,11 @@
+- Node.js, runtime environment for js like v8 provides in browser.
+- Overview of node.js async operation, event loop and thread pool.
+- events driven architecture - when the event happens, only then CPUs get invoked and makes computer busy.
+Emitters and listeners, whenever any event happens then based on that event you called listener.
+EventEmitter class, libuv.
+- utf-8 character encoding
+- buffer help handle raw data efficiently, used mostly when dealing with file streams, network data, and binary protocols.
+- a buffer is a temporary memory space used to store and manipulate raw binary data. While standard JavaScript is optimized for handling strings with Unicode encoding (utf-16), it is not efficient with raw binary data. Buffers fill this gap, allowing Node.js to operate at a lower level with a high degree of performance. 
+- A buffer's size is determined at the time of its creation. Buffers are allocated outside the V8 JavaScript engine's normal heap, which makes them highly efficient for binary operations since they are not subject to the V8 garbage collection process.
+- HTTP (HyperText transfer protocol), protocol to transfer information on the internet. HTTP request headers, response headers and body.
+- URL, DNS, Path, Query, params
