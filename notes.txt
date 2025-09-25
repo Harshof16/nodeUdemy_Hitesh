@@ -9,3 +9,6 @@ EventEmitter class, libuv.
 - A buffer's size is determined at the time of its creation. Buffers are allocated outside the V8 JavaScript engine's normal heap, which makes them highly efficient for binary operations since they are not subject to the V8 garbage collection process.
 - HTTP (HyperText transfer protocol), protocol to transfer information on the internet. HTTP request headers, response headers and body.
 - URL, DNS, Path, Query, params
+- express, semver and carrot symbols
+- Client - Server architecture
+- 
