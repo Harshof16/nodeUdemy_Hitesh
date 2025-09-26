@@ -11,4 +11,6 @@ EventEmitter class, libuv.
 - URL, DNS, Path, Query, params
 - express, semver and carrot symbols
 - Client - Server architecture
-- 
+- middlewares, middlewares can even terminate/forward the request. Middleware must not hold the request. Can also call next middlewares.
+- named exports, default exports
+- routes, mvc architecture

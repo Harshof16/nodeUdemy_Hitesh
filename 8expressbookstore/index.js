@@ -1,6 +1,8 @@
 const { error } = require("console");
 const express = require("express");
+const { appendFileSync } = require("fs");
 
+// app smartly forward the requests to respective routes
 const app = express();
 const PORT = 8000;
 
@@ -13,7 +15,27 @@ const books = [
 app.use(express.json());
 //without this middleware, api was unable to fetch body of request, now if the headers is application/json in request, then it'll just save the incoming json data into req.body
 
-app.get("/book", (req, res) => {
+//creating middleware to save in log file, will now log each request
+app.use((req, res, next) => {
+  const log = `\n[${Date.now()}]: ${req.method} ${req.path}`;
+  appendFileSync("log.txt", log, "utf-8");
+  next();
+});
+
+// route level middleware
+function customMiddleware(req, res, next) {
+    console.log("I'm a custom middlware.");
+    next();
+}
+
+// path based middleware, work on any GET, POST, DELETE request if the path matches
+app.use("/book", (req, res, next) => {
+    console.log('path book middleware');
+    next()
+})
+
+// can have here series of middlewares as well
+app.get("/book", customMiddleware, (req, res) => {
   res.setHeader("lom", "di");
   res.json(books);
 });
